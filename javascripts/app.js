@@ -139,19 +139,30 @@ function info(rover){
 function commands(rover, commands){
   var command = commands.split("");
   for (var i = 0; i < commands.length; i++) {
-    switch(command[i]){
-      case "r":
-        turnRight(rover);
-        break;
-      case "l":
-        turnLeft(rover);
-        break;
-      case "f":
-        moveForward(rover);
-        break;
-      case "b":
-        moveBackward(rover);
-        break;
+    if (command[i] == "r" || command[i] == "l" || command[i] == "f" || command[i] == "b"){
+      validationError = false;
+    }else{
+      validationError = true;
+    }
+  }
+  if (validationError) {
+    console.log("incorrect commands! Please only use: r,l,f,b");    
+  }else{
+    for (var i = 0; i < commands.length; i++) {
+      switch(command[i]){
+        case "r":
+          turnRight(rover);
+          break;
+        case "l":
+          turnLeft(rover);
+          break;
+        case "f":
+          moveForward(rover);
+          break;
+        case "b":
+          moveBackward(rover);
+          break;
+      }
     }
   }
 }
