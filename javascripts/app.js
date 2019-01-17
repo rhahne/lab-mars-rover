@@ -83,7 +83,51 @@ function moveForward(rover){
       break;
   }
   if (endOfMap) {
-    console.log("This is the end of the Map!, Can't move forward!");
+    console.log("This is the end of the Map!, Can't move forward here!");
+  }
+  console.log("The rover is now on " + rover.x + "," + rover.y + " direction: " + rover.direction);
+  showTravelLog();
+  updateFrontend(rover.x, rover.y);
+}
+function moveBackward(rover){
+  console.log("Move backward was called!");
+  endOfMap = false;
+  switch(rover.direction){
+    case "N":
+      if (rover.x + 1 >= 5) {
+        endOfMap = true;
+      }else{
+        travelLog(rover.x, rover.y);
+        rover.x += 1;
+      }
+      break;
+    case "E":
+      if (rover.y - 1 < 0) {
+        endOfMap = true;
+      }else{
+        travelLog(rover.x, rover.y);
+        rover.y -= 1;
+      }
+      break;
+    case "S":
+      if (rover.x - 1 < 0) {
+        endOfMap = true;
+      }else{
+        travelLog(rover.x, rover.y);
+        rover.x -= 1;
+      }
+      break;
+    case "W":
+      if (rover.y + 1 >= 5) {
+        endOfMap = true;
+      }else{
+        travelLog(rover.x, rover.y);
+        rover.y += 1;
+      }
+      break;
+  }
+  if (endOfMap) {
+    console.log("This is the end of the Map!, Can't move backward here!");
   }
   console.log("The rover is now on " + rover.x + "," + rover.y + " direction: " + rover.direction);
   showTravelLog();
@@ -104,6 +148,9 @@ function commands(rover, commands){
         break;
       case "f":
         moveForward(rover);
+        break;
+      case "b":
+        moveBackward(rover);
         break;
     }
   }
