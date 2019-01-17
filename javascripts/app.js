@@ -58,7 +58,7 @@ function moveForward(rover){
       }
       break;
     case "E":
-      if (rover.y + 1 > 10) {
+      if (rover.y + 1 >= 5) {
         endOfMap = true;
       }else{
         travelLog(rover.x, rover.y);
@@ -66,7 +66,7 @@ function moveForward(rover){
       }
       break;
     case "S":
-      if (rover.x + 1 > 10) {
+      if (rover.x + 1 >= 5) {
         endOfMap = true;
       }else{
         travelLog(rover.x, rover.y);
@@ -87,6 +87,7 @@ function moveForward(rover){
   }
   console.log("The rover is now on " + rover.x + "," + rover.y + " direction: " + rover.direction);
   showTravelLog();
+  updateFrontend(rover.x, rover.y);
 }
 function info(rover){
   console.log("Direction: " + rover.direction);
@@ -119,4 +120,11 @@ function showTravelLog(){
     logString += travelLogX[i] + "," + travelLogY[i] + " | ";
   }
   console.log(logString);
+}
+
+function updateFrontend(xCord, yCord){
+  id = xCord.toString() + yCord.toString();
+  console.log(id);
+  var field = document.getElementById(id);
+  field.className = "active";
 }

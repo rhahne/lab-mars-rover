@@ -1,0 +1,23 @@
+body{
+    background: url(../images/mars.jpg) no-repeat center center fixed;
+    background-repeat: cover;
+}
+.world {
+    width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    height: 500px;
+    margin-top: 200px;
+}
+table{
+    border-spacing: 0px;
+}
+td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    padding: 0px;
+}
+.active{
+    background-color: greenyellow;
+}
