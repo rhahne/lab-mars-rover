@@ -88,9 +88,10 @@ function turnRight(rover){
       rover.direction = "N";
       break;
   }
-  console.log("New Direction: " + rover.direction);
   document.getElementById(rover.currentField).textContent = rover.direction;
+  console.log("New Direction: " + rover.direction);
 }
+
 function moveForward(rover){
   console.log("Move forward was called!");
   var endOfMap = false;
@@ -295,6 +296,15 @@ function OnChangeRadio () {
   }else if (radios[2].checked){
     therover = rr;
   }
+  $('input[type="radio"]').keydown(function(e)
+{
+    var arrowKeys = [37, 38, 39, 40];
+    if (arrowKeys.indexOf(e.which) !== -1)
+    {
+        $(this).blur();
+        return false;
+    }
+});
 }
 
 document.onkeydown = checkKey;
@@ -312,5 +322,4 @@ function checkKey(e) {
     else if (e.keyCode == '39') {
        turnRight(therover);
     }
-
 }

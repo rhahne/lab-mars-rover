@@ -5,12 +5,14 @@
   <title>Mars Rover</title>
   <script src="javascripts/app.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body>
+  <h1 id="mainTitle">The Mars Rover</h1>
   <div class="world">
     <table>
       <tr id="row01">
-        <td id="00" class="active history">00</td>
+        <td id="00" class="active history ">00</td>
         <td id="01">01</td>
         <td id="02">02</td>
         <td id="03">03</td>
@@ -88,7 +90,7 @@
         <td id="63">63</td>
         <td id="64" class="active3 history3">64</td>
         <td id="65">65</td>
-        <td id="66">66</td>
+        <td id="66" >66</td>
         <td id="67">67</td>
         <td id="68">68</td>
         <td id="69">69</td>
@@ -132,31 +134,36 @@
     </table>
   </div>
   <div class="controlArea">
-    <h2>Green Rover</h2>
-    <button onclick="moveForward(gr)">F</button>
-    <button onclick="moveBackward(gr)">B</button>
-    <button onclick="turnLeft(gr)">L</button>
-    <button onclick="turnRight(gr)">R</button>
-    <h2>Blue Rover</h2>
-    <button onclick="moveForward(br)">F</button>
-    <button onclick="moveBackward(br)">B</button>
-    <button onclick="turnLeft(br)">L</button>
-    <button onclick="turnRight(br)">R</button>
-    <h2>Red Rover</h2>
-    <button onclick="moveForward(rr)">F</button>
-    <button onclick="moveBackward(rr)">B</button>
-    <button onclick="turnLeft(rr)">L</button>
-    <button onclick="turnRight(rr)">R</button>
-
-
-      <p>Choose your Rover:</p>
-        <input type="radio" id="gr" name="rover" value="gr" onclick="OnChangeRadio()">
-        <label for="gr"> Green Rover </label><br />
-        <input type="radio" id="br" name="rover" value="br" onclick="OnChangeRadio()">
-        <label for="br"> Blue Rover </label><br />
-        <input type="radio" id="rr" name="rover" value="rr" onclick="OnChangeRadio()">
-        <label for="rr"> Red Rover </label>
-
+    <div class="roverArea">
+      <h2 id="grTitle">Green Rover</h2>
+      <button onclick="moveForward(gr)"><i class="fas fa-arrow-up"></i></button><br />
+      <button onclick="turnLeft(gr)"><i class="fas fa-arrow-left"></i></button>
+      <button onclick="moveBackward(gr)"><i class="fas fa-arrow-down"></i></button>
+      <button onclick="turnRight(gr)"><i class="fas fa-arrow-right"></i></button><br />
+      <input type="radio" id="gr" name="rover" value="gr" onclick="OnChangeRadio()">
+    </div>
+    <div class="roverArea">
+      <h2 id="brTitle">Blue Rover</h2>
+      <button onclick="moveForward(br)"><i class="fas fa-arrow-up"></i></button><br />
+      <button onclick="turnLeft(br)"><i class="fas fa-arrow-left"></i></button>
+      <button onclick="moveBackward(br)"><i class="fas fa-arrow-down"></i></button>
+      <button onclick="turnRight(br)"><i class="fas fa-arrow-right"></i></button><br />
+      <input type="radio" id="br" name="rover" value="br" onclick="OnChangeRadio()">
+    </div>
+    <div class="roverArea">
+      <h2 id="rrTitle">Red Rover</h2>
+      <button onclick="moveForward(rr)"><i class="fas fa-arrow-up"></i></button><br />
+      <button onclick="turnLeft(rr)"><i class="fas fa-arrow-left"></i></button>
+      <button onclick="moveBackward(rr)"><i class="fas fa-arrow-down"></i></button>
+      <button onclick="turnRight(rr)"><i class="fas fa-arrow-right"></i></button><br />
+      <input type="radio" id="rr" name="rover" value="rr" onclick="OnChangeRadio()">
+    </div>
+    <strong>Control the selected Rover with your Keyboard Arrows!</strong> <br /><br />
   </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </body>
 </html>

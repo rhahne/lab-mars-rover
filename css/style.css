@@ -1,6 +1,12 @@
 body{
-    background: url(../images/mars.jpg) no-repeat center center fixed;
-    background-repeat: cover;
+    background: url(../images/mars-landschaft.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#mainTitle{
+    text-align: center;
+    padding: 50px;
+    font-size: 40px;
 }
 .world {
     width: 500px;
@@ -9,10 +15,10 @@ body{
     height: 500px;
 }
 .controlArea {
-    width: 250px;
+    width: 500px;
     margin: 0 auto;
     background-color: white;
-    height: 300px;
+    height: 240px;
     text-align: center;
 }
 table{
@@ -47,4 +53,23 @@ td {
 }
 form {
     background-color: white;
+}
+.roverArea{
+    width: 33.33%;
+    float: left;
+}
+#grTitle{
+    border-top: 20px solid greenyellow;
+}
+#brTitle{
+    border-top: 20px solid lightblue;
+}
+#rrTitle{
+    border-top: 20px solid coral;
+}
+input[type=radio]{
+    margin: 20px 0;
+}
+input#br{
+    background-color: lightblue;
 }
