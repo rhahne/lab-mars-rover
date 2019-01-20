@@ -73,3 +73,8 @@ input[type=radio]{
 input#br{
     background-color: lightblue;
 }
+.github{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 50px;
+}
