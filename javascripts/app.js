@@ -15,7 +15,8 @@ var br = {
   direction: "N",
   x: 9,
   y: 9,
-  travelLog: ["99"]
+  travelLog: ["99"],
+  currentField: "99"
 }
 var rr = {
   name: "rr",
@@ -23,10 +24,34 @@ var rr = {
   direction: "N",
   x: 6,
   y: 4,
-  travelLog: ["09"]
+  travelLog: ["64"],
+  currentField: "64"
 }
 // ======================
-var obstacleArray = ["15","52", "66", "84"];
+
+window.onload = function() {
+  createObstacles();
+};
+function getRandomInt(max) {
+  var number = Math.floor(Math.random() * Math.floor(max));
+  if (number < 10) {
+    number =  "0" + number.toString();
+  }else{
+    number = number.toString();;
+  }
+  if (number == gr.currentField || number == br.currentField || number == rr.currentField) {
+    return getRandomInt(99);
+  }else{
+    return number;
+  }
+}
+var obstacleArray = [getRandomInt(99), getRandomInt(99), getRandomInt(99), getRandomInt(99), getRandomInt(99)];
+
+function createObstacles(){
+  obstacleArray.forEach(function(element) {
+    document.getElementById(element).className = "obstacle";
+  });
+}
 
 function turnLeft(rover){
   console.log("turnLeft was called!");
