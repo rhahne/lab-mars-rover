@@ -7,17 +7,44 @@ body{
     margin: 0 auto;
     background-color: white;
     height: 500px;
-    margin-top: 200px;
+}
+.controlArea {
+    width: 250px;
+    margin: 0 auto;
+    background-color: white;
+    height: 300px;
+    text-align: center;
 }
 table{
     border-spacing: 0px;
 }
 td {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     text-align: center;
     padding: 0px;
 }
+.history{
+    background-color: darkgreen;
+}
 .active{
     background-color: greenyellow;
+}
+.history2{
+    background-color: darkblue;
+}
+.active2{
+    background-color: lightblue;;
+}
+.history3{
+    background-color: lightcoral;
+}
+.active3{
+    background-color: coral;;
+}
+.obstacle{
+    background-color: brown
+}
+form {
+    background-color: white;
 }
