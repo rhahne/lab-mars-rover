@@ -307,19 +307,21 @@ function OnChangeRadio () {
 });
 }
 
+
 document.onkeydown = checkKey;
 function checkKey(e) {
-    e = e || window.event;
-    if (e.keyCode == '38') {
-        moveForward(therover);
-    }
-    else if (e.keyCode == '40') {
-        moveBackward(therover);
-    }
-    else if (e.keyCode == '37') {
-       turnLeft(therover);
-    }
-    else if (e.keyCode == '39') {
-       turnRight(therover);
-    }
+  e.preventDefault();
+  e = e || window.event;
+  if (e.keyCode == '38') {
+      moveForward(therover);
+  }
+  else if (e.keyCode == '40') {
+      moveBackward(therover);
+  }
+  else if (e.keyCode == '37') {
+     turnLeft(therover);
+  }
+  else if (e.keyCode == '39') {
+     turnRight(therover);
+  }
 }
