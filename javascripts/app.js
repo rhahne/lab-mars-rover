@@ -31,7 +31,8 @@ var rr = {
 
 window.onload = function() {
   createObstacles();
-};
+}
+
 function getRandomInt(max) {
   var number = Math.floor(Math.random() * Math.floor(max));
   if (number < 10) {
@@ -286,6 +287,54 @@ function updateFrontend(rover, xCord, yCord){
     fieldActive.className = "active3";
   }
 }
+document.getElementById("grf").onclick = function() {
+  moveForward(gr);
+};
+document.getElementById("grb").onclick = function() {
+  moveBackward(gr);
+};
+document.getElementById("grr").onclick = function() {
+  turnRight(gr);
+};
+document.getElementById("grl").onclick = function() {
+  turnLeft(gr);
+};
+
+document.getElementById("brf").onclick = function() {
+  moveForward(br);
+};
+document.getElementById("brb").onclick = function() {
+  moveBackward(br);
+};
+document.getElementById("brr").onclick = function() {
+  turnRight(br);
+};
+document.getElementById("brl").onclick = function() {
+  turnLeft(br);
+};
+
+document.getElementById("rrf").onclick = function() {
+  moveForward(rr);
+};
+document.getElementById("rrb").onclick = function() {
+  moveBackward(rr);
+};
+document.getElementById("rrr").onclick = function() {
+  turnRight(rr);
+};
+document.getElementById("rrl").onclick = function() {
+  turnLeft(rr);
+};
+
+document.getElementById("rbgr").onclick = function() {
+  OnChangeRadio();
+};
+document.getElementById("rbbr").onclick = function() {
+  OnChangeRadio();
+};
+document.getElementById("rbrr").onclick = function() {
+  OnChangeRadio();
+};
 
 function OnChangeRadio () {
   var radios = document.getElementsByName('rover');
@@ -306,7 +355,6 @@ function OnChangeRadio () {
     }
 });
 }
-
 
 document.onkeydown = checkKey;
 function checkKey(e) {
