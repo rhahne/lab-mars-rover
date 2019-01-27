@@ -151,7 +151,6 @@ function moveForward(rover){
   showTravelLog(rover);
   updateFrontend(rover, rover.x, rover.y);
   rover.currentField = rover.x.toString() + rover.y.toString();
-  
   document.getElementById(rover.currentField).textContent = rover.direction;
 }
 function moveBackward(rover){
@@ -209,7 +208,8 @@ function moveBackward(rover){
   console.log("The rover is now on " + rover.x + "," + rover.y + " direction: " + rover.direction);
   showTravelLog(rover);
   updateFrontend(rover, rover.x, rover.y);
-  updateArrow(rover);
+  rover.currentField = rover.x.toString() + rover.y.toString();
+  document.getElementById(rover.currentField).textContent = rover.direction;
 }
 
 function isThereAnObstacle(xCord, yCord){
